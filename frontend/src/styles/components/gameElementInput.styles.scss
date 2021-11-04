@@ -1,0 +1,65 @@
+.game-element-input{
+
+
+    label{
+        font-size: 1.2rem;
+    }
+
+ 
+    &__input{
+        height: 3rem;
+        display: flex;
+        border: 1px solid #eee;   
+        position: relative;   
+        input{
+            border: none;
+            outline: none;
+            padding:0 1rem;
+            font-size: 1.2rem;
+            width: 100%;
+        
+        }
+
+
+        
+    }
+
+    &__selected{
+        padding-left: 1rem;
+        padding-right: 4rem;
+    
+        display: flex;
+        align-items: center;
+        margin: .2rem .5rem;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        position: relative;
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    &__remove{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        
+      
+        position: absolute;
+        right: .5rem;
+        cursor: pointer;
+
+        &:hover{
+            background-color: #eee;
+        }
+
+        svg{
+            position: absolute;
+            width: 1.4rem;
+            height: 1.4rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+
+}

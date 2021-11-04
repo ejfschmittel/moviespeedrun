@@ -1,0 +1,38 @@
+speedrun wikipedia or imdb ???
+https://developers.themoviedb.org/3/getting-started/introduction
+
+// initial
+- speedrun yourself
+- insert start & end (or roll random)
+- create and join rooms (custom)
+
+// user sysmte
+- add user system
+- save highscores
+- 
+
+
+page types: movie, tv, tv-epsiodes person
+
+
+cast, create, tv-show, tv-episodes, movie
+
+{
+    gameid: x,
+    startime: y,
+    from:
+    to: 
+    paths: {
+        prev: null,
+        next: null,
+        type: "movie"
+        url: "/etc"
+        time: ""
+    }
+    currentPage: {
+        type: "movie"
+    }
+    finished: (time)
+}
+
+

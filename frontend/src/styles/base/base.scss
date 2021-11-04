@@ -1,0 +1,45 @@
+@use "../abstracts/index.scss" as *;
+
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; 
+
+    @include respond(tab-land){
+        font-size: 56.25%; //1rem = 8px, 9/16 = 50%
+    }
+
+    @include respond(tab-port){
+        font-size: 50%; //1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(big-desktop){
+        font-size: 75%; //1rem = 8px, 9/16 = 50%
+    }
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+body{  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+
+}
+
+html, body{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+#root, .App{
+    height: 100%;
+}
