@@ -1,0 +1,45 @@
+.movie-credits{
+    
+    &__section{
+        margin-bottom: 2rem;
+    }
+
+    &__section-title{
+        font-size: 1.6rem;
+        padding: .5rem;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 1rem;
+    }
+
+    &__section-credits{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 30rem));
+        gap: 1rem;
+    }
+
+    &__credit{
+        padding: .5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: .5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &:hover{
+            background: #eee;
+        }
+    }
+
+    &__image{
+        width: 4rem;
+        height: 4rem;
+        background-color: #eee;
+        margin-right: 1rem;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &__name{
+        font-size: 1.2rem;
+    }
+}

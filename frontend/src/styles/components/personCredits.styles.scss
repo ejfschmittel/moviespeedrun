@@ -1,0 +1,55 @@
+.person-credits{
+    
+    &__section{
+        
+        
+    }
+
+    &__section-title{
+        border-bottom: 1px solid #333;
+        font-size: 1.6rem;
+        padding: .5rem .5rem;
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+    }
+
+    &__credits{
+
+    }
+
+    &__credit{
+        border-bottom: 1px solid #eee;
+        padding: .5rem;
+        font-size: 1.2rem;
+        display: flex;
+    }
+
+    &__credit-title{
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    &__credit-year{
+        min-width: 6rem;
+    }
+
+    &__credit-info{
+        display: flex;
+        align-items: center;
+        
+    }
+
+    &__credit-episodes{
+        color: #666;
+        margin-left: .5rem;
+    }
+
+    &__credit-character{
+        margin-left: .5rem;
+    }
+
+    &__credit-job{
+        margin-left: .5rem;
+    }
+}

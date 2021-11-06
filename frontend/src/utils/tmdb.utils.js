@@ -1,11 +1,27 @@
+import {API_KEY, BASE_API_URL, config} from "./tmdbConfig.utils"
 
-
-export const API_KEY = process.env.REACT_APP_TMDB_KEY;
-
-export const configurations = {
-    base_url: null,
-    preview_size: null
+const createAPIUrl = (endpoint, parameters) => {
+    let endpointUrl = `${BASE_API_URL}${endpoint}?api_key=${API_KEY}`;
+    Object.entries(parameters).map(([key, value]) => {
+        endpointUrl += `&${key}=${encodeURI(value)}`;
+    })
+    return endpointUrl;
 }
+
+
+export const URL_CREATORS = {
+    getPerson: (personID, parameters={}) => createAPIUrl(`person/${personID}`, parameters),
+    getPersonCredits: (personID, parameters={}) => createAPIUrl(`person/${personID}/combined_credits`, parameters),
+    getMovie: (movieID, parameters={}) => createAPIUrl(`movie/${movieID}`, parameters),
+    getMovieCredits: (movieID, parameters={}) => createAPIUrl(`movie/${movieID}/credits`, parameters),
+    getTv: (tvId, parameters={}) => createAPIUrl(`tv/${tvId}`, parameters),
+    getTvCredits: (tvId, parameters={}) => createAPIUrl(`tv/${tvId}/aggregate_credits`, parameters),
+    searchAll: (parameters={}) => createAPIUrl(`search/multi`, parameters) 
+}
+
+
+
+
 
 
 export const createPreviewImageUrl = (media_type, path) => {
@@ -13,30 +29,15 @@ export const createPreviewImageUrl = (media_type, path) => {
 }
 
 export const createImageUrl = (image_type, media_type, path) => {
-    return `${configurations.base_url}${configurations[image_type][media_type]}${path}`;
+    return `${config.images.secure_base_url}${config[image_type][media_type]}${path}`;
 }
 
 
-export const createConfig = async (searchTerm) => {
-    searchTerm = encodeURI(searchTerm)
-    const url = `https://api.themoviedb.org/3/configuration?api_key=${API_KEY}`;
 
-    console.log(url)
 
-    try{
-        const res = await fetch(url)
-        const json = await res.json()
-        
-        configurations.base_url = json.images.base_url;
-        configurations.preview_size = {
-            movie: json.images.backdrop_sizes[0],
-            tv: json.images.backdrop_sizes[0],
-            person: json.images.profile_sizes[1],
-        }
-        console.log(configurations)
 
-    }catch(error){
-        console.log(error)
-    }
+
+export const getImageURL = ( size, path) => {
+   return `${config.images.secure_base_url}${size}${path}`;
 }
 

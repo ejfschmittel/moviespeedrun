@@ -1,7 +1,7 @@
 import React, {useCallback, useState, useEffect, useRef} from "react";
 import SearchDropDown from "./SearchDropDown.component";
 import "../styles/components/gameElementInput.styles.scss"
-import {API_KEY} from "../utils/tmdb.utils"
+import {API_KEY} from "../utils/tmdbConfig.utils"
 import useDebounce from "../hooks/useDebounce.hook";
 import SearchItemPreview from "./itemSearchPreview.component";
 import {FaTimes} from "react-icons/fa"
